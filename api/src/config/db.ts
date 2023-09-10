@@ -1,11 +1,27 @@
-import "dotenv/config";
-import { MongoClient, ServerApiVersion } from "mongodb";
 import mongoose from "mongoose";
+
+const DB_URL = `mongodb://localhost:27017/TaskList`;
+
+export const db = () => {
+  const connect = () => {
+    mongoose
+      .connect(DB_URL, {
+        family: 4,
+      })
+      .then((data) => console.log(`${data} is connected`))
+      .catch((error) => console.log(error));
+  };
+  connect();
+};
+
+/* import "dotenv/config";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 const PASSWORD = process.env.PASSWORD;
 const USER = process.env.USER;
 
-const uri = `mongodb+srv://${USER}:<${PASSWORD}>@cluster0.huncyta.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${USER}:${PASSWORD}@cluster0.huncyta.mongodb.net/?retryWrites=true&w=majority`;
+
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
@@ -14,8 +30,6 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
-
-mongoose.connect(uri, {});
 
 async function run() {
   try {
@@ -31,31 +45,4 @@ async function run() {
     await client.close();
   }
 }
-
-const UserSchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      require: true,
-    },
-    email: {
-      type: String,
-      require: true,
-    },
-    numberPhone: {
-      type: Number,
-      require: true,
-    },
-  },
-  { timestamps: true }
-);
-
-const User = mongoose.model("user", UserSchema);
-
-User.create({
-  name: "dadadda",
-  email: "email.com",
-  phone: 301111111,
-});
-
-run().catch(console.dir);
+run().catch(console.dir); */
