@@ -1,0 +1,32 @@
+.container {
+  width: 830px;
+  height: 210px;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 5px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.containerImgText {
+  display: flex;
+}
+
+.img {
+  width: 100%;
+}
+.text {
+  text-align: justify;
+  margin: 5px;
+  color: rgb(87, 87, 87);
+}
+
+.imagen {
+  border: 1px solid rgb(184, 184, 184);
+}
+
+.containerMi {
+  display: flex;
+  align-items: center;
+  width: 570px;
+  display: flex;
+  border: 1px solid rgb(184, 184, 184);
+}

@@ -1,0 +1,21 @@
+.buttonBuscar {
+  color: white;
+  background: #394cfc;
+  width: 150px;
+  height: 40px;
+  margin: 15px;
+  border-radius: 5px;
+}
+
+.inputBuscar {
+  width: 350px;
+  height: 40px;
+  margin-top: 15px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid;
+  border-color: #c7c7c7;
+  color: #575757;
+  font-size: 18px;
+  padding-left: 5px;
+}
