@@ -4,7 +4,7 @@ import "./App.css";
 import About from "./views/About/About";
 import { Navbar } from "./componentes/Navbar/Navbar";
 import Task from "./views/Task/Task";
-import { FormLogin } from "./views/Formlogin/FormLogin";
+import {FormLogin} from "./views/Formlogin/FormLogin";
 
 function App() {
   const location = useLocation();
@@ -13,10 +13,10 @@ function App() {
       <div className="./App.css">
         {location.pathname !== "/" && <Navbar />}
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/tarea" element={<Task />} />
-          <Route path="/login" element={<FormLogin />} />
+          <Route path="/login" element={<FormLogin email={""} password={""} />} />
         </Routes>
       </div>
     </>

@@ -1,16 +1,6 @@
 import Task from "../models/tasks";
-
-interface TaskInter {
-  id: string;
-  nameTask: string;
-  description: string;
-  category: string;
-  completed: TaskBool;
-}
-
-interface TaskBool {
-  completed: boolean;
-}
+import { TaskBool, TaskInter } from "../interface";
+import { ObjectId } from "mongodb";
 
 const createTaskController = async (
   nameTask: TaskInter,
@@ -30,8 +20,48 @@ const createTaskController = async (
 
 async function allTaskController() {
   const task = await Task.find();
-  if (!task) return "tareas no existen";
+  if (!task) return "No existen tareas";
   return task;
 }
 
-export { createTaskController, allTaskController };
+const updateTaskController = async (
+  id: string,
+  nameTask: string,
+  description: string,
+  category: string
+) => {
+  const updateTask = await Task.findById(id);
+
+  if (!updateTask) return "Tarea no encontrada";
+
+  if (updateTask.nameTask) {
+    updateTask.nameTask = nameTask;
+  }
+
+  if (updateTask.description) {
+    updateTask.description = description;
+  }
+
+  if (updateTask.category) {
+    updateTask.category = category;
+  }
+
+  const update = await updateTask.save();
+  return update;
+};
+
+const dellTaskController = async (id: string) => {
+  const dell = await Task.deleteOne({ _id: new ObjectId(id) });
+  if (dell.deletedCount === 0) {
+    return "Registro no existe";
+  } else {
+    return "Registro eliminado";
+  }
+};
+
+export {
+  createTaskController,
+  allTaskController,
+  updateTaskController,
+  dellTaskController,
+};

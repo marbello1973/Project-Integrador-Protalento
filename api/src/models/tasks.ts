@@ -1,24 +1,4 @@
-/*
-Modelo de tareas 
-
-las tareas van a tener las siguiente extructura 
-
-1--> nombre de tarea type string
-2--> tipo de tarea  type string
-3--> fecha de creacion type date
-4--> si esta completada o no type booleano 
-
-*/
-
-// const taskSchema = new mongoose.Schema({
-//   nameTask: { type: String },
-//   category: { type: String },
-//   completed: { type: String },
-// });
-
-// export = mongoose.model("Task", taskSchema);
 import mongoose from "mongoose";
-// import { mongoose } from "mongoose";
 
 export interface InterfaceTaskSchema {
   nameTask: string;

@@ -6,7 +6,6 @@ export function Navbar() {
   const location = useLocation();
   const isExcludePage =
     location.pathname === "/about" || location.pathname === "/login";
-
   return (
     <>
       <nav className={styles.navContainer}>
@@ -15,22 +14,22 @@ export function Navbar() {
           <ul className={styles.ulContainer}>
             <li>
               <Link to="/about" className={styles.menu}>
-                About
+                Acerca de
               </Link>
             </li>
             <li>
               <Link to="/home" className={styles.menu}>
-                Home
+                Inicio
+              </Link>
+            </li>
+            <li>
+              <Link to="/login" className={styles.menu}>
+                Iniciar sesión
               </Link>
             </li>
             <li>
               <Link to="/tarea" className={styles.menu}>
                 Tareas
-              </Link>
-            </li>
-            <li>
-              <Link to="/login" className={styles.menu}>
-                Login
               </Link>
             </li>
           </ul>

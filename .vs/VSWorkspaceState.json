@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\client",
+    "\\client\\src",
+    "\\client\\src\\componentes",
+    "\\client\\src\\views",
+    "\\client\\src\\views\\Formlogin"
+  ],
+  "SelectedNode": "\\client\\src\\views\\Formlogin\\FormLogin.tsx",
+  "PreviewInSolutionExplorer": false
+}
