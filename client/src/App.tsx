@@ -1,26 +1,25 @@
-import Home from "./views/Home/Home";
-import { Route, Routes, useLocation } from "react-router-dom";
-import "./App.css";
-import About from "./views/About/About";
-import { Navbar } from "./componentes/Navbar/Navbar";
-import Task from "./views/Task/Task";
-import {FormLogin} from "./views/Formlogin/FormLogin";
+
+import './App.css'
+import { Routes, Route, useLocation} from 'react-router-dom'
+import Home from './views/home/Home'
+import { About } from './views/about/About'
+import Landing from './views/landing/Landing'
+import Navbar from './views/navbar/Navbar'
+import Tasks from './views/tasks/Tasks'
 
 function App() {
-  const location = useLocation();
+  const location = useLocation()
   return (
-    <>
-      <div className="./App.css">
-        {location.pathname !== "/" && <Navbar />}
+    <div>  
+      {location.pathname !== '/' && <Navbar />}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/tarea" element={<Task />} />
-          <Route path="/login" element={<FormLogin email={""} password={""} />} />
+          <Route path='/' element={<Landing />} />        
+          <Route path='/home' element={<Home />} />        
+          <Route path='/about' element={<About />} />        
+          <Route path='/task' element={<Tasks />} />        
         </Routes>
-      </div>
-    </>
-  );
+    </div>   
+  )  
 }
 
-export default App;
+export default App

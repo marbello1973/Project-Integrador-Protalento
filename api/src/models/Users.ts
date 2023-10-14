@@ -9,7 +9,8 @@ export interface InterfaceUserSchema {
 }
 
 const Users = new mongoose.Schema(
-  {
+
+  {    
     name: { type: String, required: true },
     lastName: { type: String },
     email: { type: String, required: true },
